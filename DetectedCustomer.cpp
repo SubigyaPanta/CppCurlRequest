@@ -27,7 +27,7 @@ void DetectedCustomer::setEmotion(std::string emotion){
 }
 
 bool DetectedCustomer::isAllSet(){
-    std::cout<< (customerId > 0) << !gender.empty() << !age.empty() << !emotion.empty() << std::endl;
+//    std::cout<< (customerId > 0) << !gender.empty() << !age.empty() << !emotion.empty() << std::endl;
     if( (customerId > 0) && !gender.empty() && !age.empty() && !emotion.empty() ){
         return true;
     }
