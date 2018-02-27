@@ -3,6 +3,7 @@
 //
 
 #include "DetectedCustomer.h"
+#include <map>
 
 DetectedCustomer::DetectedCustomer(long id){
     customerId = id;
@@ -45,4 +46,11 @@ bool DetectedCustomer::isGaeSet(){
 
 bool DetectedCustomer::isNotified() {
     return this->detectionStatusNotified;
+}
+
+bool customerExists(std::map<int, DetectedCustomer*> custMap, int key){
+//    if(custMap.find(key) != custMap.end()){
+//        return true;
+//    }
+    return custMap.find(key) != custMap.end();
 }
