@@ -6,30 +6,43 @@
 
 DetectedCustomer::DetectedCustomer(long id){
     customerId = id;
+    this->gender = false;
+    this->age = false;
+    this->emotion = false;
+    this->detectionStatusNotified = false;
 }
-DetectedCustomer::DetectedCustomer(long id, std::string gender, std::string age, std::string emotion){
+DetectedCustomer::DetectedCustomer(long id, bool gender, bool age, bool emotion){
     customerId = id;
     this->gender = gender;
     this->age = age;
     this->emotion = emotion;
+    this->detectionStatusNotified = false;
 }
 
-void DetectedCustomer::setGender(std::string gender){
+void DetectedCustomer::setGender(bool gender){
     this->gender = gender;
 }
 
-void DetectedCustomer::setAge(std::string age){
+void DetectedCustomer::setAge(bool age){
     this->age = age;
 }
 
-void DetectedCustomer::setEmotion(std::string emotion){
+void DetectedCustomer::setEmotion(bool emotion){
     this->emotion = emotion;
 }
 
-bool DetectedCustomer::isAllSet(){
+void DetectedCustomer::setNotificationStatus(bool notification) {
+    this->detectionStatusNotified = notification;
+}
+
+bool DetectedCustomer::isGaeSet(){
 //    std::cout<< (customerId > 0) << !gender.empty() << !age.empty() << !emotion.empty() << std::endl;
-    if( (customerId > 0) && !gender.empty() && !age.empty() && !emotion.empty() ){
+    if( (customerId > 0) && gender && age && emotion ){
         return true;
     }
     return false;
+}
+
+bool DetectedCustomer::isNotified() {
+    return this->detectionStatusNotified;
 }

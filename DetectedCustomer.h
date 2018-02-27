@@ -10,18 +10,21 @@
 
 class DetectedCustomer {
     long customerId;
-    std::string gender;
-    std::string age;
-    std::string emotion;
+    bool gender;
+    bool age;
+    bool emotion;
+    bool detectionStatusNotified;
 
 public:
     DetectedCustomer(long id);
-    DetectedCustomer(long id, std::string gender, std::string age, std::string emotion);
+    DetectedCustomer(long id, bool gender, bool age, bool emotion);
 
-    void setGender(std::string gender);
-    void setAge(std::string age);
-    void setEmotion(std::string emotion);
-    bool isAllSet();
+    void setGender(bool gender);
+    void setAge(bool age);
+    void setEmotion(bool emotion);
+    void setNotificationStatus(bool notification);
+    bool isGaeSet();
+    bool isNotified();
 };
 
 
